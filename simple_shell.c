@@ -9,9 +9,7 @@ int main(void)
 {
 	int interactive = isatty(STDIN_FILENO);
 	char **env = __environ;
-	char *l = NULL;
 
-	system("clear");
 	if (interactive)
 	{
 
@@ -22,7 +20,7 @@ int main(void)
 	}
 	else
 	{
-		non_interactive(l, env);
+		non_interactive(env);
 	}
 	return (0);
 }

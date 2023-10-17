@@ -43,9 +43,10 @@ char *_strchr(char *s, char c);
 
 int _strcmp(char *s1, char *s2);
 
-int non_interactive(char *l, char **env);
+int non_interactive(char **env);
 
 char path_handeler(char **ts, char *dir, char **env);
 
 void exe_command(char **ts, char **env);
+
 #endif
