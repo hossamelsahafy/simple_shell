@@ -10,7 +10,11 @@
  */
 void handler(int sig)
 {
-	if (sig == SIGINT || sig == SIGTSTP)
+	if (sig == SIGINT)
+	{
+		signal(sig, SIG_IGN);
+	}
+	else if (sig == SIGTSTP)
 	{
 		signal(sig, SIG_IGN);
 		write(STDOUT_FILENO, "\ncisfun$ ", 8);

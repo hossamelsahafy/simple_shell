@@ -37,7 +37,6 @@ void execute(char **ts, char **env)
 		if (dir == NULL)
 		{
 			perror("command");
-			exit(127);
 		}
 	}
 	free(c_pth);
