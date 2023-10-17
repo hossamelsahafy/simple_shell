@@ -13,6 +13,6 @@ void handler(int sig)
 	if (sig == SIGINT || sig == SIGTSTP)
 	{
 		signal(sig, SIG_IGN);
-		write(STDOUT_FILENO, "\ncisfun$", 7);
+		write(STDOUT_FILENO, "\ncisfun$ ", 8);
 	}
 }

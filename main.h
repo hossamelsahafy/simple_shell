@@ -13,12 +13,6 @@
 #include <errno.h>
 #include <sys/stat.h>
 
-typedef struct path_node
-{
-    char *dir;
-    struct p_node *next;
-} p_node_t;
-
 extern char **environ;
 
 char **p_l(char *s);
@@ -45,9 +39,13 @@ void exe_echo(char **ts);
 
 void exe_cat(char **ts);
 
-int path_handler(char *c, char **env);
-
 char *_strchr(char *s, char c);
 
 int _strcmp(char *s1, char *s2);
+
+int non_interactive(char *l, char **env);
+
+char path_handeler(char **ts, char *dir, char **env);
+
+void exe_command(char **ts, char **env);
 #endif

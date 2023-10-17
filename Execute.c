@@ -1,38 +1,44 @@
 #include "main.h"
-#include <unistd.h>
-#include <sys/wait.h>
-#include <stdio.h>
-#include <stdlib.h>
-
 /**
- * execute - function to execute built-in commands
+ * execute - function to excute commands
  *
  * @ts: parameter that point to char
  *
  * @env: parameter that point to char
  */
-
 void execute(char **ts, char **env)
 {
-	pid_t pid;
-	int status;
+	int is_p = 0;
+	char *pth;
+	char *c_pth;
+	char *dir;
 
-	pid  = fork();
-	if (pid == 0)
+	pth = getenv("PATH");
+	c_pth = strdup(pth);
+	dir  = strtok(c_pth, ":");
+	if (_strchr(ts[0], '/') != NULL)
 	{
-		if (execve(ts[0], ts, env) == -1)
-		{
-			perror("./shell");
-			exit(1);
-		}
+		is_p = 1;
 	}
-	else if (pid > 0)
+	if (is_p != 0)
 	{
-		wait(&status);
+		exe_command(ts, env);
 	}
 	else
 	{
-		perror("error");
-		exit(1);
+		while (dir != NULL)
+		{
+			if (path_handeler(ts, dir, env) == 1)
+			{
+				break;
+			}
+			dir = strtok(NULL, ":");
+		}
+		if (dir == NULL)
+		{
+			perror("command");
+			exit(127);
+		}
 	}
+	free(c_pth);
 }
