@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <stdbool.h>
+
 /**
  * e_b - function to excute diffrent actions
  * based on input of strirng
@@ -21,7 +21,6 @@ int e_b(char **ts, char **env)
 	int i;
 	const char *env_v;
 	size_t env_v_l;
-	bool env_allocated = false;
 
 	if (strcmp(ts[0], "exit") == 0)
 	{
@@ -57,10 +56,6 @@ int e_b(char **ts, char **env)
 	{
 		perror("ERRNO");
 		return (1);
-	}
-	if (env_allocated)
-	{
-		free(env);
 	}
 	return (0);
 }
