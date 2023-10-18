@@ -22,7 +22,7 @@ void loop(char **env)
 		}
 		if (l[0] == '\n')
 		{
-			write(STDOUT_FILENO, "cisfun$ ", 8);
+			write(STDOUT_FILENO, "$ ", 2);
 			continue;
 		}
 		ts = p_l(l);
@@ -38,7 +38,7 @@ void loop(char **env)
 		ts = NULL;
 		l = NULL;
 		len = 0;
-		write(STDOUT_FILENO, "cisfun$ ", 8);
+		write(STDOUT_FILENO, "$ ", 2);
 	}
 	free(l);
 }

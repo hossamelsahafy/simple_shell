@@ -17,6 +17,6 @@ void handler(int sig)
 	else if (sig == SIGTSTP)
 	{
 		signal(sig, SIG_IGN);
-		write(STDOUT_FILENO, "\ncisfun$ ", 8);
+		write(STDOUT_FILENO, "\n$ ", 3);
 	}
 }

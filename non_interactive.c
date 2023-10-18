@@ -23,9 +23,14 @@ int non_interactive(char **env)
 			{
 				e_b(ts, env);
 			}
-			else if (access(ts[0], F_OK) != -1)
+			else if (access(ts[0], F_OK) == 0)
 			{
 				exe_command(ts, env);
+			}
+			else  if (access(ts[0], F_OK) == -1)
+			{
+				perror("command");
+				exit(1);
 			}
 			else
 			{
