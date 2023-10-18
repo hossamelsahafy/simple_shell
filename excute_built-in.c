@@ -18,12 +18,17 @@
 
 int e_b(char **ts, char **env)
 {
-	int i;
+	int i, j;
 	const char *env_v;
 	size_t env_v_l;
 
 	if (strcmp(ts[0], "exit") == 0)
 	{
+		for (j = 0; ts[j] != NULL; j++)
+		{
+			free(ts[j]);
+		}
+		free(ts);
 		exit(0);
 	}
 	else if (strcmp(ts[0], "cd") == 0)
@@ -44,6 +49,11 @@ int e_b(char **ts, char **env)
 	}
 	else if (strcmp(ts[0], "env") == 0)
 	{
+		if (env == NULL)
+		{
+			perror("env");
+			return (1);
+		}
 		for (i = 0; env[i] != NULL; i++)
 		{
 			env_v = env[i];

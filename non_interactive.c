@@ -44,5 +44,6 @@ int non_interactive(char **env)
 		l = NULL;
 		len = 0;
 	}
+	free(l);
 	return (0);
 }
