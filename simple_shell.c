@@ -13,7 +13,7 @@ int main(void)
 	if (interactive)
 	{
 
-		write(STDOUT_FILENO, "cisfun$ ", 8);
+		write(STDOUT_FILENO, "$ ", 2);
 		signal(SIGINT, handler);
 		signal(SIGTSTP, handler);
 		loop(env);
