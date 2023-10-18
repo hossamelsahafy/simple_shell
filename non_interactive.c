@@ -23,9 +23,14 @@ int non_interactive(char **env)
 			{
 				e_b(ts, env);
 			}
-			else
+			else if (access(ts[0], F_OK) != -1)
 			{
 				exe_command(ts, env);
+			}
+			else
+			{
+				write(1, l, _strlen(l));
+				write(1, "\n", 1);
 			}
 			free(ts);
 		}
