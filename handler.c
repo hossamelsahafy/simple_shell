@@ -10,13 +10,7 @@
  */
 void handler(int sig)
 {
-	if (sig == SIGINT)
-	{
-		signal(sig, SIG_IGN);
-	}
-	else if (sig == SIGTSTP)
-	{
-		signal(sig, SIG_IGN);
-		write(STDOUT_FILENO, "\n$ ", 3);
-	}
+	(void)sig;
+	write(1,"\n$ ", 3);
+
 }
