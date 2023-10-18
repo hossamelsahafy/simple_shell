@@ -11,6 +11,6 @@
 void handler(int sig)
 {
 	(void)sig;
-	write(1,"\n$ ", 3);
+	write(1, "\n$ ", 3);
 
 }
