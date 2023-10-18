@@ -25,9 +25,7 @@ int e_b(char **ts, char **env)
 	if (strcmp(ts[0], "exit") == 0)
 	{
 		for (j = 0; ts[j] != NULL; j++)
-		{
 			free(ts[j]);
-		}
 		free(ts);
 		exit(0);
 	}
