@@ -36,6 +36,7 @@ void loop(char **env)
 		}
 		free(ts);
 		ts = NULL;
+		free(l);
 		l = NULL;
 		len = 0;
 		write(STDOUT_FILENO, "$ ", 2);

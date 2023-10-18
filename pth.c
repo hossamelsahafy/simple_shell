@@ -15,7 +15,7 @@
 char path_handeler(char **ts, char *dir, char **env)
 {
 	int status;
-	pid_t pid;
+	pid_t pid = -1;
 	char *p;
 
 	p = malloc(_strlen(dir) + _strlen(ts[0]) + 2);
@@ -53,5 +53,5 @@ char path_handeler(char **ts, char *dir, char **env)
 		return (1);
 	}
 	free(p);
-	return (-1);
+	return (pid == 0 ? 1 : -1);
 }
