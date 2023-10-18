@@ -50,4 +50,6 @@ char path_handeler(char **ts, char *dir, char **env);
 
 void exe_command(char **ts, char **env);
 
+char *_strdup(char *s);
+
 #endif

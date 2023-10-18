@@ -14,7 +14,7 @@ void execute(char **ts, char **env)
 	char *dir;
 
 	pth = getenv("PATH");
-	c_pth = strdup(pth);
+	c_pth = _strdup(pth);
 	dir  = strtok(c_pth, ":");
 	if (_strchr(ts[0], '/') != NULL)
 	{
