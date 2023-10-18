@@ -36,12 +36,14 @@ char path_handeler(char **ts, char *dir, char **env)
 			{
 				perror("path");
 				free(p);
-				exit(1);
+				return (-1);
 			}
 		}
 		else if (pid > 0)
 		{
 			wait(&status);
+			free(p);
+			return (1);
 		}
 		else
 		{
@@ -49,8 +51,6 @@ char path_handeler(char **ts, char *dir, char **env)
 			free(p);
 			exit(1);
 		}
-		free(p);
-		return (1);
 	}
 	free(p);
 	return (pid == 0 ? 1 : -1);

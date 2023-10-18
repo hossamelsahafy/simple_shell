@@ -40,4 +40,5 @@ void execute(char **ts, char **env)
 		}
 	}
 	free(c_pth);
+	c_pth = NULL;
 }

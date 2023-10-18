@@ -38,6 +38,7 @@ int non_interactive(char **env)
 				write(1, "\n", 1);
 			}
 			free(ts);
+			ts = NULL;
 		}
 		free(l);
 		l = NULL;
