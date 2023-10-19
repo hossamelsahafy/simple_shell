@@ -55,4 +55,6 @@ char *_strdup(char *s);
 int handle_env(char **env);
 
 int handle_cd(char **ts);
+
+void comment_handeler(char **ts);
 #endif

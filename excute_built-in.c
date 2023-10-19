@@ -20,6 +20,8 @@ int e_b(char **ts, char **env)
 {
 	int i;
 
+	comment_handeler(ts);
+
 	if (strcmp(ts[0], "exit") == 0)
 	{
 		for (i = 0; ts[i] != NULL; i++)
