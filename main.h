@@ -16,7 +16,7 @@
 
 extern char **environ;
 
-char **p_l(char *s);
+char **p_l(char *l);
 
 char c_b(char *token);
 
@@ -48,7 +48,7 @@ int non_interactive(char **env);
 
 char path_handeler(char **ts, char *dir, char **env);
 
-void exe_command(char **ts, char **env);
+int exe_command(char **ts, char **env);
 
 char *_strdup(char *s);
 
@@ -56,5 +56,10 @@ int handle_env(char **env);
 
 int handle_cd(char **ts);
 
-void comment_handeler(char **ts);
+void comment_handeler(char *ts);
+
+void r_v(char **ts, int exit_status, int pid);
+
+void int_to_str(int n, char *str);
+
 #endif

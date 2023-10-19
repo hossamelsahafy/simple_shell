@@ -6,10 +6,13 @@
  * @ts: parameter that point to char
  *
  * @env: parameter that point to char
+ *
+ * Return: will be exit_status
 */
-void exe_command(char **ts, char **env)
+int exe_command(char **ts, char **env)
 {
 	pid_t pid;
+	int exit_status;
 	int status;
 
 	pid = fork();
@@ -24,10 +27,12 @@ void exe_command(char **ts, char **env)
 	else if (pid > 0)
 	{
 		wait(&status);
+		exit_status = WEXITSTATUS(status);
 	}
 	else
 	{
 		perror("error");
 		exit(1);
 	}
+	return (exit_status);
 }

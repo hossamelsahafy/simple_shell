@@ -15,6 +15,7 @@ void loop(char **env)
 	while (1)
 	{
 		rs = getline(&l, &len, stdin);
+		comment_handeler(l);
 		if (rs == -1)
 		{
 			write(STDOUT_FILENO, "\n", 1);
