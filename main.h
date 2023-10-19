@@ -52,4 +52,7 @@ void exe_command(char **ts, char **env);
 
 char *_strdup(char *s);
 
+int handle_env(char **env);
+
+int handle_cd(char **ts);
 #endif
