@@ -10,16 +10,25 @@ void comment_handeler(char *ts)
 {
 	int i = 0;
 
+	if (ts == NULL)
+	{
+		return;
+	}
+	while (ts[i] == ' ')
+	{
+		i++;
+	}
 	if (ts[i] == '#')
 	{
 		ts[i] = '\0';
+		return;
 	}
-	for (i = 0; ts[i] != '\0'; i++)
+	for (i = 00; ts[i] != '\0'; i++)
 	{
 		if (ts[i] == '#' && ts[i - 1] == ' ')
 		{
 			ts[i] = '\0';
+			return;
 		}
 	}
-	ts[i] = '\0';
 }
