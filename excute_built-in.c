@@ -43,6 +43,11 @@ int e_b(char **ts, char **env)
 	{
 		return (handle_env(env));
 	}
+	else if (strcmp(ts[0], "pwd") == 0)
+	{
+		pwd_handler();
+		return (0);
+	}
 	else
 	{
 		perror("ERRNO");

@@ -70,4 +70,6 @@ void handle_semi(char *i, char **env);
 
 void s_d(char *l, char **env);
 
+void pwd_handler(void);
+
 #endif
