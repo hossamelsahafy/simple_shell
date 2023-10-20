@@ -23,7 +23,7 @@ void comment_handeler(char *ts)
 		ts[i] = '\0';
 		return;
 	}
-	for (i = 00; ts[i] != '\0'; i++)
+	for (i = 0; ts[i] != '\0'; i++)
 	{
 		if (ts[i] == '#' && ts[i - 1] == ' ')
 		{

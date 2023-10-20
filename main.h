@@ -67,4 +67,7 @@ void pro_l(char *l, char **env);
 int _atoi(char *s);
 
 void handle_semi(char *i, char **env);
+
+void s_d(char *l, char **env);
+
 #endif

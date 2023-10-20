@@ -7,9 +7,11 @@
  *
  * Return: will be 0
 */
+
 int non_interactive(char **env)
 {
 	char *l = NULL;
+	char *tmp;
 	size_t len = 0;
 	ssize_t rs = 0;
 
@@ -18,7 +20,10 @@ int non_interactive(char **env)
 		if (rs > 1)
 		{
 			comment_handeler(l);
-			if (l[0] != '\0')
+			tmp = l;
+			while (*tmp == ' ' || *tmp == '\t' || *tmp == '\n')
+				tmp++;
+			if (*tmp != '\0')
 			{
 				handle_semi(l, env);
 				pro_l(l, env);

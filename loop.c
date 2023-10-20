@@ -7,7 +7,6 @@
 */
 void loop(char **env)
 {
-	char **ts = NULL;
 	char *l = NULL;
 	size_t len = 0;
 	ssize_t rs = 0;
@@ -21,26 +20,7 @@ void loop(char **env)
 			write(STDOUT_FILENO, "\n", 1);
 			break;
 		}
-		if (l[0] == '\n')
-		{
-			write(STDOUT_FILENO, "$ ", 2);
-			continue;
-		}
-		if (l[0] != '\n')
-		{
-			handle_semi(l, env);
-		}
-		ts = p_l(l);
-		if (c_b(ts[0]) == 1)
-		{
-			e_b(ts, env);
-		}
-		else
-		{
-			execute(ts, env);
-		}
-		free(ts);
-		ts = NULL;
+		s_d(l, env);
 		free(l);
 		l = NULL;
 		len = 0;
