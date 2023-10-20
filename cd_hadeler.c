@@ -10,19 +10,30 @@
 
 int handle_cd(char **ts)
 {
+	char cwd[1024];
+	char *pth = ts[1];
 
-	if (ts[1] == NULL)
+	if (pth == NULL)
 	{
-		perror("ERRNO");
-		return (1);
+		pth = getenv("HOME");
+	}
+	else if (strcmp(pth, "-") == 0)
+	{
+		pth = getenv("OLDPWD");
+	}
+	if (chdir(pth) != 0)
+	{
+		perror("cd");
+		return (1); 
+	}
+	if (getcwd(cwd, sizeof(cwd)) != NULL)
+	{
+		setenv("PWD", cwd, 1);
 	}
 	else
 	{
-		if (chdir(ts[1]) != 0)
-		{
-			perror("cd");
-			return (1);
-		}
+		perror("getcwd() error");
+		return (1);
 	}
 	return (0);
 }

@@ -12,7 +12,6 @@ int main(void)
 
 	if (interactive)
 	{
-
 		write(STDOUT_FILENO, "$ ", 2);
 		signal(SIGINT, handler);
 		loop(env);
