@@ -63,4 +63,7 @@ void r_v(char **ts, int exit_status, int pid);
 void int_to_str(int n, char *str);
 
 void pro_l(char *l, char **env);
+
+int _atoi(char *s);
+
 #endif
