@@ -22,8 +22,7 @@ int exe_command(char **ts, char **env)
 		{
 			perror("./shell");
 			exit(EXIT_FAILURE);
-		}
-		
+		}	
 	}
 	else if (pid > 0)
 	{
