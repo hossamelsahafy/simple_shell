@@ -24,7 +24,7 @@ int handle_cd(char **ts)
 	if (chdir(pth) != 0)
 	{
 		perror("cd");
-		return (1); 
+		return (1);
 	}
 	if (getcwd(cwd, sizeof(cwd)) != NULL)
 	{
