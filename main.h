@@ -14,6 +14,33 @@
 #include <errno.h>
 #include <sys/stat.h>
 
+/**
+ * struct alias - struct to store name and value
+ *
+ * @name: to idntify Alias name
+ *
+ * @value: to identify Alias value
+*/
+typedef struct alias
+{
+	char name[100];
+	char value[100];
+} Alias;
+
+/**
+ * struct shell - Struct to store shell data
+ *
+ * @aliases: Array of aliases
+ *
+ * @alias_c: Number of aliases
+ */
+
+typedef struct shell
+{
+	Alias aliases[100];
+	int alias_c;
+} Shell;
+
 extern char **environ;
 
 char **p_l(char *l);
@@ -71,5 +98,9 @@ void handle_semi(char *i, char **env);
 void s_d(char *l, char **env);
 
 void pwd_handler(void);
+
+void alias_handler(Shell *shell, char **ars);
+
+void exit_handler(char **ts);
 
 #endif

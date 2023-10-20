@@ -18,22 +18,13 @@
 
 int e_b(char **ts, char **env)
 {
-	int i;
-	int l_exit_s = 0;
-	int status = l_exit_s;
+	Shell shell;
+
+	shell.alias_c = 0;
 
 	if (strcmp(ts[0], "exit") == 0)
 	{
-		if (ts[1] != NULL)
-		{
-			status = _atoi(ts[1]);
-		}
-		for (i = 0; ts[i] != NULL; i++)
-		{
-			free(ts[i]);
-		}
-		free(ts);
-		exit(status);
+		exit_handler(ts);
 	}
 	else if (strcmp(ts[0], "cd") == 0)
 	{
@@ -47,6 +38,10 @@ int e_b(char **ts, char **env)
 	{
 		pwd_handler();
 		return (0);
+	}
+	else if (strcmp(ts[0], "alias") == 0)
+	{
+		alias_handler(&shell, ts);
 	}
 	else
 	{

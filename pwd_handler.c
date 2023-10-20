@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pwd_handeler - function to handle the current directory
+ * pwd_handler - function to handle the current directory
  */
 
 void pwd_handler(void)
@@ -15,6 +15,6 @@ void pwd_handler(void)
 	}
 	else
 	{
-		perror("getcwd() error");
+		perror("pwd: current directory failed");
 	}
 }
