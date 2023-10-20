@@ -1,12 +1,18 @@
 #include "main.h"
-
-void handle_semi(char *i, char **env)
+/**
+ * handle_semi - function to handel semicolone
+ *
+ * @in: parameter that point to char
+ *
+ * @env: parameter that point to char
+ */
+void handle_semi(char *in, char **env)
 {
-    char *c[20];
-    int index = 0;
+	char *c[20];
+	int index = 0;
 
-    c[index] = strtok(i, ";");
-    while (c[index] != NULL)
+	c[index] = strtok(in, ";");
+	while (c[index] != NULL)
 	{
 		(void)env;
 		index++;
