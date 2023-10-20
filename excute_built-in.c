@@ -19,15 +19,20 @@
 int e_b(char **ts, char **env)
 {
 	int i;
+	int status = 0;
 
 	if (strcmp(ts[0], "exit") == 0)
 	{
-		for (i = 0; ts[i] != NULL; i++)
-		{
-			free(ts[i]);
-		}
-		free(ts);
-		exit(0);
+		if (ts[1] != NULL)
+	{
+		status = atoi(ts[1]);
+	}
+	for (i = 0; ts[i] != NULL; i++)
+	{
+		free(ts[i]);
+	}
+	free(ts);
+	exit(status);
 	}
 	else if (strcmp(ts[0], "cd") == 0)
 	{
