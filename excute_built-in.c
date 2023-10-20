@@ -18,10 +18,6 @@
 
 int e_b(char **ts, char **env)
 {
-	Shell shell;
-
-	shell.alias_c = 0;
-
 	if (strcmp(ts[0], "exit") == 0)
 	{
 		exit_handler(ts);
@@ -38,10 +34,6 @@ int e_b(char **ts, char **env)
 	{
 		pwd_handler();
 		return (0);
-	}
-	else if (strcmp(ts[0], "alias") == 0)
-	{
-		alias_handler(&shell, ts);
 	}
 	else
 	{

@@ -13,18 +13,11 @@
 void pro_l(char *l, char **env)
 {
 	char **ts;
-	Shell shell;
-
-	shell.alias_c = 0;
 
 	ts = p_l(l);
 	if (ts == NULL)
 	{
 		return;
-	}
-	if (strcmp(ts[0], "alias") == 0)
-	{
-		alias_handler(&shell, ts);
 	}
 	if (c_b(ts[0]) == 1)
 	{
