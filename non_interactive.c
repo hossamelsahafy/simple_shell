@@ -20,6 +20,7 @@ int non_interactive(char **env)
 			comment_handeler(l);
 			if (l[0] != '\0')
 			{
+				handle_semi(l, env);
 				pro_l(l, env);
 			}
 			free(l);

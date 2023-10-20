@@ -26,6 +26,10 @@ void loop(char **env)
 			write(STDOUT_FILENO, "$ ", 2);
 			continue;
 		}
+		if (l[0] != '\n')
+		{
+			handle_semi(l, env);
+		}
 		ts = p_l(l);
 		if (c_b(ts[0]) == 1)
 		{
